@@ -22,7 +22,8 @@ jobs:
       - name: Install DVC
         run: |
           pip install dvc
-          pip install dvc[gdrive]
+          pip install dvc-gdrive
+
 
       - name: Configure DVC remote
         run: |
