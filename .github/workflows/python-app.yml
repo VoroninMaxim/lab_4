@@ -27,7 +27,9 @@ jobs:
 
       - name: Configure DVC remote
         run: |
+          echo "$GOOGLE_DRIVE_CREDENTIALS_DATA" > credentials.json
           dvc remote modify storage gdrive_acknowledge_abuse true
+          dvc remote modify storage gdrive_service_account_json_file_path credentials.json
           dvc remote modify storage url gdrive://1CUWjhnRnxFJQe1eN8FCLoyHXE4Fvd5rD
           dvc remote default storage
 
